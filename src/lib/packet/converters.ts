@@ -55,7 +55,6 @@ const converters: IStringIndex = {
             records = [];
             i = 0;
             while (i < numRecords) {
-                // @ts-expect-error TS(2554): Expected 0 arguments, but got 5.
                 records.push(sprintf("%d.%d.%d.%d", buf[pos++], buf[pos++], buf[pos++], buf[pos++]));
                 i++;
             }
@@ -85,7 +84,6 @@ const converters: IStringIndex = {
             records = [];
             i = 0;
             while (i < numRecords) {
-                // @ts-expect-error TS(2554): Expected 0 arguments, but got 5.
                 records.push(sprintf("%d.%d.%d.%d", buf[pos++], buf[pos++], buf[pos++], buf[pos++]));
                 i++;
             }
@@ -155,7 +153,6 @@ const converters: IStringIndex = {
             records = [];
             i = 0;
             while (i < numRecords) {
-                // @ts-expect-error TS(2554): Expected 0 arguments, but got 5.
                 records.push(sprintf("%d.%d.%d.%d", buf[pos++], buf[pos++], buf[pos++], buf[pos++]));
                 i++;
             }
@@ -184,7 +181,6 @@ const converters: IStringIndex = {
             var i = 0;
             var len = buf.length;
             while (i < len) {
-                // @ts-expect-error TS(2554): Expected 0 arguments, but got 2.
                 records.push(sprintf("%02x", buf[i]));
                 i++;
             }
@@ -211,7 +207,6 @@ const converters: IStringIndex = {
             records = [];
             i = 0;
             while (i < numRecords) {
-                // @ts-expect-error TS(2554): Expected 0 arguments, but got 5.
                 records.push(sprintf("%d.%d.%d.%d", buf[pos++], buf[pos++], buf[pos++], buf[pos++]));
                 i++;
             }
@@ -352,7 +347,6 @@ const converters: IStringIndex = {
             type = buf[0];
             j = 1;
             while (j < buf.length) {
-                // @ts-expect-error TS(2554): Expected 0 arguments, but got 2.
                 s.push(sprintf("%02x", buf[j]));
                 j++;
             }
@@ -391,11 +385,8 @@ const converters: IStringIndex = {
         decode: function (buf: any) {
             var ret;
             ret = "";
-            // @ts-expect-error TS(2554): Expected 0 arguments, but got 2.
             ret += sprintf("%d", buf[0]) + "-";
-            // @ts-expect-error TS(2554): Expected 0 arguments, but got 2.
             ret += sprintf("%d", buf[1]) + "-";
-            // @ts-expect-error TS(2554): Expected 0 arguments, but got 2.
             ret += sprintf("%d", buf[2]) + " ";
             // CHECK
             //ret += utils.toString(buf.slice(3));      
@@ -415,7 +406,6 @@ const converters: IStringIndex = {
             s = [];
             j = 1;
             while (j < buf.length) {
-                // @ts-expect-error TS(2554): Expected 0 arguments, but got 2.
                 s.push(sprintf("%02x", buf[j]));
                 j++;
             }
