@@ -1,7 +1,5 @@
 /**
- * dhcpd
- * 
- * configured for dhcp-proxy
+ * etrick: a node dhcp-proxy
  * 
  * I toke that from: https://github.com/FOGProject/node-dhcproxy
  *         based on: https://github.com/glaszig/node-dhcpd/
@@ -26,15 +24,13 @@ const
     DHCP_REQUESTED_IP = 0x32,
     DHCP_HOST_NAME = 0x0c;
 
-import { IDhcpOptions, IDhcpd, IPacket } from '../interfaces/i-pxe'
-
 
 /**
  * 
  * @param opts 
  * @returns 
  */
-class dhcpd {
+class etrick {
 
     /**
      * 
@@ -43,8 +39,8 @@ class dhcpd {
      */
     constructor(opts) {
         var self = this;
-        if (!(self instanceof dhcpd)) {
-            return new dhcpd(opts)
+        if (!(self instanceof etrick)) {
+            return new etrick(opts)
         }
         ee.call(self);
         if (opts.subnet) {
@@ -226,7 +222,7 @@ class dhcpd {
 /**
  * 
  */
-inherits(dhcpd, ee);
+inherits(etrick, ee);
 
 /**
  * 
@@ -238,4 +234,5 @@ function _get_option(pkt, opt) {
     return (opt in pkt.options) ? pkt.options[opt] : undefined;
 }
 
-export default dhcpd;
+export default etrick;
+

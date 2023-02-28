@@ -1,6 +1,6 @@
 {
-    "name": "penguins-dhcpd-proxy",
-    "main": "dist/classes/dhcpd.js",
+    "name": "etrick",
+    "main": "dist/",
     "version": "0.0.1",
     "description": "eggs dhcpd proxy",
     "author": "PieroProietti",
@@ -12,7 +12,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/pieroproietti/penguins-dhcpd-proxy.git"
+        "url": "https://github.com/pieroproietti/etrick.git"
     },
     "keywords": [
         "dhcp",

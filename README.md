@@ -1,4 +1,4 @@
-# penguins-dhcpd-proxy
+# etrick
 
 Eggs use this DHCPD PROXY server to provide PXE boot information to the clients, it need the presence of a standard DHCPD server on the LAN, but You don't need to reconfigure it to add PXE fields.
 
