@@ -5,7 +5,7 @@
 
 import { Socket } from 'dgram';
 import { Packet } from './packet'
-import MessageTypes from './packet/message-types'
+import MessageTypes from '../lib/packet/message-types'
 import { log, inherits } from 'util';
 
 /**

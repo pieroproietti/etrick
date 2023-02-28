@@ -8,8 +8,8 @@
  */
 
 import { log, inherits } from 'util';
-import {Packet} from './packet'
-import MessageTypes from './packet/message-types'
+import { Packet } from './packet'
+import MessageTypes from '../lib/packet/message-types'
 import { Socket } from 'dgram';
 
 /**

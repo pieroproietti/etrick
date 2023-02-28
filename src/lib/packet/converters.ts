@@ -49,7 +49,7 @@ const converters: IStringIndex = {
     // option 3: routers
     3: {
         decode: function decode(buf: any) {
-            var i, numRecords, pos, records;
+            let i, numRecords, pos, records;
             numRecords = buf.length / 4;
             pos = 0;
             records = [];
@@ -62,7 +62,7 @@ const converters: IStringIndex = {
         },
 
         encode: function encode(buf: any, num: any, data: any, offset: any) {
-            var routers;
+            let routers;
             routers = data;
             buf[offset++] = num;
             buf[offset++] = routers.length * 4;
@@ -78,7 +78,7 @@ const converters: IStringIndex = {
     // option 6: dns servers
     6: {
         decode: function (buf: any) {
-            var i, numRecords, pos, records;
+            let i, numRecords, pos, records;
             numRecords = buf.length / 4;
             pos = 0;
             records = [];
@@ -91,7 +91,7 @@ const converters: IStringIndex = {
         },
 
         encode: function (buf: any, num: any, data: any, offset: any) {
-            var routers;
+            let routers;
             routers = data.split(",");
             buf[offset++] = num;
             buf[offset++] = routers.length * 4;
@@ -147,7 +147,7 @@ const converters: IStringIndex = {
     // option 33: static routes
     33: {
         decode: function decode(buf: any) {
-            var i, numRecords, pos, records;
+            let i, numRecords, pos, records;
             numRecords = buf.length / 4;
             pos = 0;
             records = [];
@@ -160,7 +160,7 @@ const converters: IStringIndex = {
         },
 
         encode: function encode(buf: any, num: any, data: any, offset: any) {
-            var routers;
+            let routers;
             routers = data.split(",");
             buf[offset++] = num;
             buf[offset++] = routers.length * 4;
@@ -177,9 +177,9 @@ const converters: IStringIndex = {
     // option 43: vendor specific information
     43: {
         decode: function (buf: any) {
-            var records = [];
-            var i = 0;
-            var len = buf.length;
+            const records = [];
+            let i = 0;
+            const len = buf.length;
             while (i < len) {
                 records.push(sprintf("%02x", buf[i]));
                 i++;
@@ -187,7 +187,7 @@ const converters: IStringIndex = {
             return records.join(':');
         },
         encode: function (buf: any, num: any, data: any, offset: any) {
-            let vendorinfo = data.split(":");
+            const vendorinfo = data.split(":");
             buf[offset++] = num;
             buf[offset++] = vendorinfo.length;
             vendorinfo.forEach(function (hex: any) {
@@ -201,7 +201,7 @@ const converters: IStringIndex = {
     // option 44: netbios name servers
     44: {
         decode: function (buf: any) {
-            var i, numRecords, pos, records;
+            let i, numRecords, pos, records;
             numRecords = buf.length / 4;
             pos = 0;
             records = [];
@@ -214,7 +214,7 @@ const converters: IStringIndex = {
         },
 
         encode: function (buf: any, num: any, data: any, offset: any) {
-            var routers;
+            let routers;
             routers = data.split(",");
             buf[offset++] = num;
             buf[offset++] = routers.length * 4;
@@ -290,9 +290,9 @@ const converters: IStringIndex = {
     // option 55: parameter request list
     55: {
         decode: function decode(buf: any) {
-            var records = [];
-            var i = 0;
-            var len = buf.length;
+            const records = [];
+            let i = 0;
+            const len = buf.length;
             while (i < len) {
                 records[i] = buf[i];
                 i++;
@@ -342,7 +342,7 @@ const converters: IStringIndex = {
         },
 
         decode: function (buf: any) {
-            var j, s, type;
+            let j, s, type;
             s = [];
             type = buf[0];
             j = 1;
@@ -364,11 +364,11 @@ const converters: IStringIndex = {
     77: {
         encode: writeString,
         decode: function (buf: any) {
-            var records = [];
-            var offset = 0;
+            const records = [];
+            let offset = 0;
             while (buf[offset]) {
-                var uc_len = buf[offset];
-                var uc_data = buf.slice(offset++, uc_len);
+                const uc_len = buf[offset];
+                const uc_data = buf.slice(offset++, uc_len);
                 offset += uc_len;
                 records.push(uc_data.toString('ascii'));
             }
@@ -383,7 +383,7 @@ const converters: IStringIndex = {
         },
 
         decode: function (buf: any) {
-            var ret;
+            let ret;
             ret = "";
             ret += sprintf("%d", buf[0]) + "-";
             ret += sprintf("%d", buf[1]) + "-";
@@ -402,7 +402,7 @@ const converters: IStringIndex = {
         },
 
         decode: function (buf: any) {
-            var j, s;
+            let j, s;
             s = [];
             j = 1;
             while (j < buf.length) {
@@ -426,7 +426,7 @@ const converters: IStringIndex = {
 };
 
 
-var stub = {
+const stub = {
     encode: function (buf: any, num: any, value: any, offset: any) {
         //    console.error("[dhcproxy] encoder for option " + num + " not found");
         return offset;
@@ -443,7 +443,7 @@ export default function (i: any): any {
         console.log("GET CONVERTER FOR " + i);
     }
     return (i in converters) ? converters[i] : stub;
-};
+}
 
 /**
  * error TS7053: Element implicitly has an 'any' type because expression 

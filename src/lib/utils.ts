@@ -76,7 +76,7 @@ export function writeInt8(_buffer: any, integer: number, offset: number) {
  * @returns 
  */
 export function readBytes(_buffer: any, length: number, copy: any, offset: number) {
-    var bufCopy;
+    let bufCopy;
     if (copy) {
         bufCopy = new Buffer(length);
         _buffer.copy(bufCopy, 0, offset, (offset += length));
@@ -122,7 +122,7 @@ export function readInt8(_buffer: any, offset: number) {
  * @returns 
  */
 export function readString(buf: any) {
-    var j, s;
+    let j, s;
     s = "";
     j = 0;
     while (j < buf.length) {
@@ -138,7 +138,7 @@ export function readString(buf: any) {
  * @returns 
  */
 export function readHex(buf: any) {
-    var j, s;
+    let j, s;
     s = "";
     j = 0;
     while (j < buf.length) {
@@ -155,7 +155,7 @@ export function readHex(buf: any) {
  * @returns 
  */
 export function readHexAddress(buf: any) {
-    var j, s;
+    let j, s;
     s = [];
     j = 0;
     while (j < buf.length) {
@@ -172,7 +172,7 @@ export function readHexAddress(buf: any) {
  * @returns 
  */
 export function readIp(buffer: any, offset: number) {
-    var stop;
+    let stop;
     if (offset === null) {
         offset = 0;
     }
@@ -184,8 +184,7 @@ export function readIp(buffer: any, offset: number) {
     } else {
         stop = offset + 4;
         return ((function () {
-            var _results;
-            _results = [];
+            const _results = [];
             while (offset < stop) {
                 _results.push(buffer.readUInt8(offset++));
             }
@@ -200,10 +199,10 @@ export function readIp(buffer: any, offset: number) {
  * @returns 
  */
 export function readMacAddress(buffer: any) {
-    var byte;
+    let byte;
     return ((function () {
-        var _i, _len, _results;
-        _results = [];
+        let _i, _len
+        const _results = []
         for (_i = 0, _len = buffer.length; _i < _len; _i++) {
             byte = buffer[_i];
             _results.push((byte + 0x100).toString(16).substr(-2));
@@ -254,7 +253,7 @@ export function writeIp(buf: any, num: string, ip: any, offset: number) {
  * @returns 
  */
 export function writeString(buf: any, num: string, hostname: string, offset: number) {
-    var charArr;
+    let charArr;
     charArr = hostname.split("");
     buf[offset++] = num;
     buf[offset++] = charArr.length;

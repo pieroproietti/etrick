@@ -5,7 +5,7 @@
  * 
  */
 import { readIp, readMacAddress } from '../lib/utils';
-import get_convert from './packet/converters';
+import get_convert from '../lib/packet/converters'
 
 /**
  * 
