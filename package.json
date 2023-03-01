@@ -1,7 +1,7 @@
 {
     "name": "etrick",
     "main": "dist/",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "eggs dhcpd proxy",
     "author": "PieroProietti",
     "license": "GPL-3.0",

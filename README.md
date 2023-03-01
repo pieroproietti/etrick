@@ -6,7 +6,9 @@ This project started on the only working dhcpd proxy in nodejs who I found: FOGP
 
 So I decided to rewrite it in typescript, give a structure and start to use it for eggs.
 
-Still working, I'm on the initial phase.
+But I'm still working, it's just on the initial phase. 
+
+The right moment to get on and help! 
 
 Reference:
 * [node-dhcproxy](https://github.com/FOGProject/node-dhcproxy) node-dhcproxy is based on [node-dhcpd](https://github.com/glaszig/node-dhcpd)
