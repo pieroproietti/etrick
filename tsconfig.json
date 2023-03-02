@@ -4,13 +4,14 @@
     "allowJs": true,
     "importHelpers": true,
     "esModuleInterop": true,
-    "module": "commonjs",
-    "moduleResolution": "Node",
+    "module": "Node16",
+    "moduleResolution": "node",
     "outDir": "dist",
     "rootDir": "src",
     "strict": true,
-    "types": ["node"],
-    "lib": ["es2021"],
+    "lib": [
+      "es2021"
+    ],
     "target": "es2021",
     "resolveJsonModule": true
   },
