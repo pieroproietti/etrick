@@ -2,13 +2,16 @@
 
 Eggs use this DHCPD PROXY server to provide PXE boot information to the clients, it need the presence of a standard DHCPD server on the LAN, but You don't need to reconfigure it to add PXE fields.
 
-This project started on the only working dhcpd proxy in nodejs who I found: FOGProject [node-dhcproxy](https://github.com/FOGProject/node-dhcproxy). After using it to implement a PXE server for eggs, I started to feel the need to have my version and perhaps to evolve it on a complete PXE server. 
+This project started from the only working dhcpd proxy for nodejs I could find: FOG project [node-dhcproxy](https://github.com/FOGProject/node-dhcproxy).
 
-So I decided to rewrite it in typescript, give a structure and start to use it for eggs.
+After using it to implement a PXE server for eggs, I began to feel the need to have my own version and perhaps evolve it into a full PXE server.
 
-But I'm still working, it's just on the initial phase. 
+So I decided to rewrite it in typescript, give a structure and start to use it for my project [penguins-eggs](https://github.com/pieroproietti/penguins-eggs).
 
-The right moment to get on and help! 
+There is still work to be done, though; it is functional but should undergo refactoring. In particular, I could not convert the main part - the proxy and server classes - into typescript.
+
+You can find an example of use in the [pxe.ts](https://github.com/pieroproietti/penguins-eggs/blob/master/src/classes/pxe.ts) class of penguins-eggs 
+
 
 Reference:
 * [node-dhcproxy](https://github.com/FOGProject/node-dhcproxy) node-dhcproxy is based on [node-dhcpd](https://github.com/glaszig/node-dhcpd)
