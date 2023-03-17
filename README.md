@@ -10,7 +10,27 @@ So I decided to rewrite it in typescript, give a structure and start to use it f
 
 There is still work to be done, though; it is functional but should undergo refactoring. In particular, I could not convert the main part - the proxy and server classes - into typescript.
 
-You can find an example of use in the [pxe.ts](https://github.com/pieroproietti/penguins-eggs/blob/master/src/classes/pxe.ts) class of penguins-eggs 
+You can find an example of use in the [pxe.ts](https://github.com/pieroproietti/penguins-eggs/blob/master/src/classes/pxe.ts) class of penguins-eggs. 
+
+Note the lines:
+
+```
+// @ts-ignore
+import etrick from 'etrick
+```
+
+And lines:
+```
+    /**
+     *
+     * @param dhcpOptions
+     */
+    dhcpStart(dhcpOptions: IDhcpOptions) {
+      new etrick(dhcpOptions)
+    }
+```
+
+The definition of types can be found in [i-pxe.ts](https://github.com/pieroproietti/penguins-eggs/blob/master/src/interfaces/i-pxe.ts)
 
 
 Reference:
